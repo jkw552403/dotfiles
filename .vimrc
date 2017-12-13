@@ -54,7 +54,6 @@ set nu
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set mouse=a
 let mapleader = "z"
-let g:pymode_lint = 1
 
 " --- EasyMotion ---
 let g:EasyMotion_smartcase = 1
@@ -65,8 +64,14 @@ autocmd vimenter * NERDTree
 map <F3> <plug>NERDTreeTabsToggle<CR>
 
 " --- python mode ---
+let g:pymode_lint = 1
+let g:pymode_lint_on_fly = 1
+let g:pymode_debug = 0
 let g:pymode_options_colorcolumn = 0
 let g:pymode_python = 'python3'
+let g:pymode_rope_completion_bind = '<C-C>'
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport_import_after_complete = 1
 
 " --- vim-expand-region ---
 vmap v <Plug>(expand_region_expand)
