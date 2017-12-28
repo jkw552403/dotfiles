@@ -38,6 +38,11 @@ Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeToggle' }
 " --- Python ---
 Plug 'python-mode/python-mode'
 
+
+" --- Ansible ---
+Plug 'pearofducks/ansible-vim'
+
+" --- Misc ---
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
