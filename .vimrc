@@ -48,6 +48,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'iamcco/markdown-preview.vim'
+
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 syntax on
@@ -89,3 +91,6 @@ nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
 imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
 
 let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
+
+" --- tagbar ---
+nmap <F8> :TagbarToggle<CR>
