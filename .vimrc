@@ -46,6 +46,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'iamcco/markdown-preview.vim'
 
@@ -68,7 +69,7 @@ let g:EasyMotion_smartcase = 1
 " --- NERDTree ---
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd vimenter * NERDTree
-map <F3> <plug>NERDTreeTabsToggle<CR>
+map <F4> <plug>NERDTreeTabsToggle<CR>
 
 " --- python mode ---
 let g:pymode_lint = 1
@@ -111,3 +112,7 @@ map g# <Plug>(incsearch-nohl-g#)
 " --- yaml ---
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+
+" --- fzf ---
+map <F2> :Files<CR>
+map <F3> :GFiles<CR>
