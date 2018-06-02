@@ -38,11 +38,19 @@ Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeToggle' }
 " --- Python ---
 Plug 'python-mode/python-mode'
 
+
+" --- Ansible ---
+Plug 'pearofducks/ansible-vim'
+
+" --- Misc ---
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'iamcco/markdown-preview.vim'
+
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 syntax on
@@ -54,7 +62,6 @@ set nu
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set mouse=a
 let mapleader = "z"
-let g:pymode_lint = 1
 
 " --- EasyMotion ---
 let g:EasyMotion_smartcase = 1
@@ -62,11 +69,17 @@ let g:EasyMotion_smartcase = 1
 " --- NERDTree ---
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd vimenter * NERDTree
-map <F3> <plug>NERDTreeTabsToggle<CR>
+map <F4> <plug>NERDTreeTabsToggle<CR>
 
 " --- python mode ---
+let g:pymode_lint = 1
+let g:pymode_lint_on_fly = 1
+let g:pymode_debug = 0
 let g:pymode_options_colorcolumn = 0
 let g:pymode_python = 'python3'
+let g:pymode_rope_completion_bind = '<C-C>'
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport_import_after_complete = 1
 
 " --- vim-expand-region ---
 vmap v <Plug>(expand_region_expand)
@@ -79,3 +92,27 @@ nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
 imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
 
 let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
+
+" --- tagbar ---
+nmap <F8> :TagbarToggle<CR>
+
+" --- hlsearch ---
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+" --- yaml ---
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+
+" --- fzf ---
+map <F2> :Files<CR>
+map <F3> :GFiles<CR>
