@@ -42,6 +42,14 @@ Plug 'python-mode/python-mode'
 " --- Ansible ---
 Plug 'pearofducks/ansible-vim'
 
+" --- json ---
+Plug 'elzr/vim-json'
+
+" --- k8s ---
+Plug 'c9s/helper.vim'
+Plug 'c9s/treemenu.vim'
+Plug 'c9s/vikube.vim'
+
 " --- Misc ---
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -112,6 +120,7 @@ map g# <Plug>(incsearch-nohl-g#)
 " --- yaml ---
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 
 " --- fzf ---
 map <F2> :Files<CR>
