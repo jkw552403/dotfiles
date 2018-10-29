@@ -147,6 +147,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias rm="rm -i"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(kubectl completion zsh)
 
 fe() {
   local files
