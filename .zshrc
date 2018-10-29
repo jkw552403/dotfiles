@@ -137,8 +137,8 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='magenta'
 POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='clear'
 POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='green'
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+[ -f pyenv ] && eval "$(pyenv init -)"
+[ -f pyenv ] && eval "$(pyenv virtualenv-init -)"
 
 bindkey -v
 bindkey "jj" vi-cmd-mode
@@ -147,7 +147,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias rm="rm -i"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source <(kubectl completion zsh)
+[ -f kubectl ] && source <(kubectl completion zsh)
 
 fe() {
   local files
