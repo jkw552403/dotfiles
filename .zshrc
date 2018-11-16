@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 # Clone oh-my-zsh if it doesn't exist.
 if [ ! -d $HOME/.oh-my-zsh ] ; then
@@ -137,8 +138,8 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='magenta'
 POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='clear'
 POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='green'
 
-[ -f pyenv ] && eval "$(pyenv init -)"
-[ -f pyenv ] && eval "$(pyenv virtualenv-init -)"
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv virtualenv-init -)"
 
 bindkey -v
 bindkey "jj" vi-cmd-mode
@@ -147,7 +148,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias rm="rm -i"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f kubectl ] && source <(kubectl completion zsh)
+[ -x "$(command -v kubectl)" ] && source <(kubectl completion zsh)
 
 fe() {
   local files
