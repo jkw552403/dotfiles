@@ -68,7 +68,7 @@ au BufNewFile,BufRead *.ddl set filetype=sql
 imap jj <ESC>
 set nu
 set smartcase
-set spell spelllang = en_us
+set spell spelllang=en_us
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set mouse=a
 let mapleader = "z"
