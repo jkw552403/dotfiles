@@ -4,6 +4,7 @@
 
 export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
 
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 # Clone oh-my-zsh if it doesn't exist.
 if [ ! -d $HOME/.oh-my-zsh ] ; then
@@ -69,7 +70,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract z zsh-256color zsh-autosuggestions)
+plugins=(git extract z zsh-256color zsh-autosuggestions kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -140,8 +141,8 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='magenta'
 POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='clear'
 POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='green'
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv virtualenv-init -)"
 
 bindkey -v
 bindkey "jj" vi-cmd-mode
