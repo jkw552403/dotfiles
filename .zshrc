@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
+
+export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
 
 
 # Clone oh-my-zsh if it doesn't exist.
@@ -147,7 +150,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias rm="rm -i"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source <(kubectl completion zsh)
+[ -x "$(command -v kubectl)" ] && source <(kubectl completion zsh)
 
 fe() {
   local files
@@ -167,3 +170,6 @@ fo() {
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 }
+
+# added by pipsi (https://github.com/mitsuhiko/pipsi)
+export PATH="/home/ko/.local/bin:$PATH"
