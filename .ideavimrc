@@ -1,1 +1,11 @@
 imap jj <Esc>
+
+set clipboard=unnamedplus,unnamed
+
+let mapleader = "z"
+
+nmap <leader><leader>b :action KJumpAction<cr>
+nmap <leader><leader>w :action KJumpAction.Word0<cr>
+nmap <leader><leader>l :action KJumpAction.Line<cr>
+
+set surround
