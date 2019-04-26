@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
+
+export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 
@@ -168,3 +171,6 @@ fo() {
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 }
+
+# added by pipsi (https://github.com/mitsuhiko/pipsi)
+export PATH="/home/ko/.local/bin:$PATH"
