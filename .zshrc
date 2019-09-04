@@ -12,6 +12,11 @@ if [ ! -d $HOME/.oh-my-zsh ] ; then
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 fi
 
+# Clone vim color scheme
+if [ ! -d $HOME/.vim/pack/themes/opt/solarized8 ] ; then
+    git clone https://github.com/lifepillar/vim-solarized8.git ~/.vim/pack/themes/opt/solarized8
+fi
+
 # Path to your oh-my-zsh installation.
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
