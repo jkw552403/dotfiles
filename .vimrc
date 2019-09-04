@@ -52,6 +52,8 @@ Plug 'c9s/vikube.vim'
 
 " --- Misc ---
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'roxma/vim-tmux-clipboard'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -127,3 +129,7 @@ autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 " --- fzf ---
 map <F2> :Files<CR>
 map <F3> :GFiles<CR>
+
+
+let g:solarized_termtrans=1
+colorscheme solarized8_high
