@@ -30,6 +30,7 @@ Plug 'wellle/targets.vim'
 
 " --- display ---
 Plug 'haya14busa/incsearch.vim'
+Plug 'lifepillar/vim-solarized8'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
