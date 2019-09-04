@@ -12,6 +12,11 @@ if [ ! -d $HOME/.oh-my-zsh ] ; then
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 fi
 
+# Clone tpm if it doesn't exist.
+if [ ! -d $HOME/.tmux/plugins/tpm ] ; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # Path to your oh-my-zsh installation.
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
