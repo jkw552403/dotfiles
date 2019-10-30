@@ -17,6 +17,16 @@ if [ ! -d $HOME/.tmux/plugins/tpm ] ; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
+# Clone zsh-256color if it doesn't exist.
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-256color ] ; then
+    git clone https://github.com/chrissicool/zsh-256color $HOME/.oh-my-zsh/custom/plugins/zsh-256color
+fi
+
+# Clone zsh-suggestions if it doesn't exist.
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] ; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
 # Path to your oh-my-zsh installation.
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
