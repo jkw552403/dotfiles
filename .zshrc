@@ -10,6 +10,7 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 if [ ! -d $HOME/.oh-my-zsh ] ; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+    git clone https://github.com/chrissicool/zsh-256color
 fi
 
 # Clone tpm if it doesn't exist.
@@ -75,7 +76,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract z zsh-256color zsh-autosuggestions kubectl)
+plugins=(git extract z zsh-256color zsh-autosuggestions kubectl poetry)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -179,3 +180,16 @@ fo() {
 
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
 export PATH="/home/ko/.local/bin:$PATH"
+NODE_GLOBALS+=("node")
+NODE_GLOBALS+=("nvm")
+
+load_nvm () {
+    export NVM_DIR=~/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+}
+
+for cmd in "${NODE_GLOBALS[@]}"; do
+    eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
+done
+
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
