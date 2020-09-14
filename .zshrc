@@ -203,3 +203,9 @@ for cmd in "${NODE_GLOBALS[@]}"; do
 done
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+nvim () {
+    unset -f nvim
+    load_nvm
+    nvim "$@"
+}
