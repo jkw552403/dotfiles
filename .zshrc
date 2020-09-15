@@ -162,7 +162,12 @@ bindkey -v
 bindkey "jj" vi-cmd-mode
 bindkey '^R' history-incremental-pattern-search-backward
 
+# Alias
 alias rm="rm -i"
+if command -v bat &> /dev/null
+then
+    alias cat='bat'
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -x "$(command -v kubectl)" ] && source <(kubectl completion zsh)
@@ -213,3 +218,4 @@ nvim () {
     nvim "$@"
 }
 
+source $HOME/.local/lib/git-subrepo/.rc
