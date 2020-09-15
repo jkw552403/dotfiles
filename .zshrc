@@ -2,9 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
 
-export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
-
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 
 # Clone oh-my-zsh if it doesn't exist.
 if [ ! -d $HOME/.oh-my-zsh ] ; then
@@ -204,8 +202,14 @@ done
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+# nvim
+if [ -x "$(command -v nvim)" ] ; then
+    alias vim="nvim"
+    export EDITOR="nvim"
+fi
 nvim () {
     unset -f nvim
     load_nvm
     nvim "$@"
 }
+
