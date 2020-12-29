@@ -1,18 +1,9 @@
 tap "derailed/k9s"
-tap "drone/drone"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mas-cli/tap"
-cask "osxfuse"
-brew "mas-cli/tap/mas"
-cask "docker"
-cask "font-hack-nerd-font"
-cask "iina"
-cask "visual-studio-code"
-mas "LINE", id: 539883307
-brew "jq"
 brew "bash"
 brew "bat"
 brew "xz"
@@ -25,9 +16,11 @@ brew "git"
 brew "graphviz"
 brew "helm"
 brew "htop"
+brew "jq"
 brew "kind"
 brew "kubernetes-cli"
 brew "kubectx"
+brew "mas"
 brew "mecab", link: false
 brew "mecab-ipadic"
 brew "mono", link: false
@@ -45,9 +38,19 @@ brew "yadm"
 brew "zsh"
 brew "zsh-autosuggestions"
 brew "derailed/k9s/k9s"
-brew "drone/drone/drone"
 cask "basictex"
+cask "docker"
 cask "emacs"
-cask "font-meslo-nerd-font"
-cask "font-meslo-nerd-font-mono"
+cask "font-hack-nerd-font"
+cask "font-meslo-lg-nerd-font"
 cask "font-source-code-pro"
+cask "iina"
+cask "iterm2"
+cask "osxfuse"
+cask "visual-studio-code"
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
