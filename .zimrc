@@ -37,4 +37,5 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # }}} End configuration added by Zim install
 
+# powerlevel10k
 zmodule romkatv/powerlevel10k
