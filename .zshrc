@@ -136,11 +136,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 export PATH="/usr/local/opt/openjdk/bin:$HOME/.pyenv/bin:$HOME/.local/bin:/usr/local/bin:$ZIM_HOME:$PATH"
 
-# Install zim if it doesn't exist
-if [ ! -d $HOME/.zim ] ; then
-    curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
-fi
-
 # Clone tpm if it doesn't exist.
 if [ ! -d $HOME/.tmux/plugins/tpm ] ; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
