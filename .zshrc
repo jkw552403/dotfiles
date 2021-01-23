@@ -342,4 +342,4 @@ nvim () {
 
 
 # asdf
-. /usr/local/opt/asdf/asdf.sh
+[[ -f ~/.airflow-breeze.zsh ]] && . /usr/local/opt/asdf/asdf.sh
