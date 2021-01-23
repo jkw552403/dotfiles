@@ -1,3 +1,7 @@
+# For some ohmyzsh plugins
+ZSH_CACHE_DIR="$HOME/.zim/.cache"
+[ ! -d $ZSH_CACHE_DIR ] && mkdir -p $ZSH_CACHE_DIR
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -134,7 +138,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
 
-export PATH="/usr/local/opt/openjdk/bin:$HOME/.pyenv/bin:$HOME/.local/bin:/usr/local/bin:$ZIM_HOME:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$HOME/.pyenv/bin:$HOME/.local/bin:/usr/local/opt/gnu-getopt/bin:/usr/local/bin:$ZIM_HOME:$PATH"
 
 # Install zim if it doesn't exist
 if [ ! -d $HOME/.zim ] ; then
@@ -144,6 +148,10 @@ fi
 # Clone tpm if it doesn't exist.
 if [ ! -d $HOME/.tmux/plugins/tpm ] ; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+if [ ! -f $HOME/.iterm2_shell_integration.zsh ] ; then
+    curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 fi
 
 export TERM="xterm-256color"
@@ -272,6 +280,8 @@ if command -v bat &> /dev/null
 then
     alias cat='bat'
 fi
+alias ga="git add"
+alias gcom="git checkout master"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -x "$(command -v kubectl)" ] && source <(kubectl completion zsh)
@@ -323,6 +333,18 @@ nvim () {
 }
 
 [ -f $HOME/.local/lib/git-subrepo/.rc ] && source $HOME/.local/lib/git-subrepo/.rc
+[ -f $HOME/.iterm2_shell_integration.zsh ] && source $HOME/.iterm2_shell_integration.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+
+# Auto-generated commands are moved to .conda_init.zsh
+[[ -f ~/.conda_init.zsh ]] && source ~/.conda_init.zsh
+
+# Airflow breeze
+[[ -f ~/.airflow-breeze.zsh ]] && source ~/.airflow-breeze.zsh
+
+
+# asdf
+. /usr/local/opt/asdf/asdf.sh

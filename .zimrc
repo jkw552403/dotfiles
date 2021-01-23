@@ -39,3 +39,6 @@ zmodule zsh-users/zsh-history-substring-search
 
 # powerlevel10k
 zmodule romkatv/powerlevel10k
+
+# plugins from ohmyzsh
+zmodule ohmyzsh/ohmyzsh -f 'plugins/wd' -s 'plugins/wd/wd.plugin.zsh' -f 'plugins/kubectl' -s 'plugins/kubectl/kubectl.plugin.zsh' -f 'plugins/docker-compose' -s 'plugins/docker-compose/docker-compose.plugin.zsh' -f 'plugins/docker' -s 'plugins/docker/_docker'
